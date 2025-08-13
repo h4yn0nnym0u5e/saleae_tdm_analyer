@@ -295,7 +295,8 @@ void PCMWaveFileHandler::close(void)
 
 void PCMWaveFileHandler::updateFileSize(void)
 {
-    U32 data_size_bytes = mTotalFrames * mFrameSizeBytes;
+    //U32 data_size_bytes = mTotalFrames * mFrameSizeBytes;
+    U32 data_size_bytes = mSampleCount * mBytesPerChannel; 
 
     if((data_size_bytes % 2) == 1){
         data_size_bytes += 1;
